@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  app:
+      container_name: app
+      image: "app:test"
+      secrets:
+      - AWS_KEY
+      expose:
+      - 5000
+  nginx:
+      container_name: nginx
+      image: "nginx:test"
+      ports:
+       - "80:80"
+       - "443:443"
+      secrets:
+      - cert.crt
+      - key.key
+secrets:
+   AWS_KEY:
+     file: /root/ssl/inform.json
+   cert.crt:
+     file: /root/ssl/nginx-ssl.crt
+   key.key:
+     file: /root/ssl/nginx-ssl.key

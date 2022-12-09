@@ -1,0 +1,57 @@
+pipeline {
+    agent any
+    environment {
+        BUILD_NUMBER = 'test'
+    }
+    stages {
+        stage('========== Clone repository ==========') {
+            steps {
+                script {
+                    echo "VERSION : ${env.BUILD_NUMBER}"
+                    checkout scm
+                }
+            }
+        }
+        stage('========== Build image ==========') {
+            steps{
+                script {
+                    app = docker.build("sb9338/food")
+                }
+            }
+        }
+        stage('========== Push image ==========') {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("test")
+                    }
+                }
+            }
+        }
+        stage('SSH transfer') {
+            steps {
+                script {
+                    sshPublisher(
+                            continueOnError: false, failOnError: true,
+                            publishers: [
+                                    sshPublisherDesc(
+                                            configName: "probodia-food",
+                                            verbose: true,
+                                            transfers: [
+                                                    sshTransfer(
+                                                            sourceFiles: "",
+                                                            removePrefix: "",
+                                                            remoteDirectory: "",
+                                                            execCommand: "sh /root/foodclassifier-service/cmd.sh"
+                                                    )
+                                            ]
+                                    )
+                            ]
+                    )
+                }
+            }
+        }
+    }
+}
+
