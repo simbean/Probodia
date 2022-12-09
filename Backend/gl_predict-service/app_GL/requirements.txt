@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pymysql
+sqlalchemy
+numpy
+pandas
+python-logstash
+xgboost
+joblib
+scikit-learn

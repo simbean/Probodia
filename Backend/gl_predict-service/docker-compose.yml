@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+  app:
+      container_name: app_gl
+      image: "app_gl:0.1"
+      secrets:
+      - cert.pem
+      - key.pem
+      - coef
+      - db
+      - model
+      ports:
+       - "8000:8000"
+secrets:
+  cert.pem:
+     file: /home/ubuntu/cert.pem
+  db:
+     file: /home/ubuntu/DBinform.json
+  key.pem:
+     file: /home/ubuntu/key.pem
+  coef:
+     file: /home/ubuntu/GL.json
+  model:
+     file: /home/ubuntu/model.json
