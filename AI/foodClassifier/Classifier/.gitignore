@@ -1,0 +1,12 @@
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+label/
+trainimg/
+wandb/
+traincropimg/
+**/*.pt
+**/*.csv
+**/*.png
+**/*.json
+code_test.ipynb
