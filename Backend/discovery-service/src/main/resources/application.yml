@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: discoveryservice
+
+# config server 설정 정보 - 향후 추가
+#  cloud:
+#    config:
+#      uri: http://127.0.0.1:8888
+#      name: ecommerce
+
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+

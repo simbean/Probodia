@@ -1,0 +1,76 @@
+server:
+  port: 8000
+  ssl:
+    enabled: true
+    key-alias: piri-ssl
+    key-store: classpath:certificate.p12
+    key-store-type: PKCS12
+    key-store-password: tjwlsdl1
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: apigateway-service
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  zipkin:
+    base-url: http://localhost:9411
+
+  cloud:
+    gateway:
+      routes:
+        #        - id: user-service
+        #          uri: lb://USER-SERVICE
+        #          predicates:
+        #            - Path=/user-service/**
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/user-service/**
+            - Method=POST, GET, PUT, DELETE
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/user-service/(?<segment>.*), /$\{segment}
+            - name: LoggingFilter
+              args:
+                serverName: user-service
+        - id: food-service
+          uri: lb://FOOD-SERVICE
+          predicates:
+            - Path=/food-service/**
+            - Method=POST, GET, PUT, DELETE
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/food-service/(?<segment>.*), /$\{segment}
+            - name: LoggingFilter
+              args:
+                serverName: user-service
+        - id: challenge-service
+          uri: lb://CHALLENGE-SERVICE
+          predicates:
+            - Path=/challenge-service/**
+            - Method=POST, GET, PUT, DELETE
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/challenge-service/(?<segment>.*), /$\{segment}
+            - name: LoggingFilter
+              args:
+                serverName: user-service
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, httptrace, busrefresh,info, metrics, prometheus

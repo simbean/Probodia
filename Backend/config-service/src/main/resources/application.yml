@@ -1,0 +1,38 @@
+
+server:
+    port: 8888
+spring:
+    rabbitmq:
+        ssl:
+            enabled: true
+        host: b-270fa353-974f-4f5e-bb3e-4262767e7fcc.mq.ap-northeast-2.amazonaws.com
+        port: 5671
+        username: piri
+        password: qkrtjwls123!
+        virtual-host: /
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://git.swmgit.org/swm-13-main/13_swm99/probodia-server-config.git
+# Spring Cloud Config ? Remote ? ?? Git Repository ? ?????.
+# ??? ??? ????? ??? ?? ??? ????? ???? ?? ??? ???? ??? ????? ? ???,
+# ??? ???? ??? Git Repository ? ???? ?? ????.
+                    force-pull: true
+                    timeout: 30
+
+# Config ??? ??? ?? ??? ??? ??? ???? ????.
+# {application} ?? Client ? spring.application.name ?? ????.
+                    searchPaths:
+                        - '{application}'
+                        - '{application}/*'
+                    default-label: master
+                    username: token
+                    password: LUdjDcJXT2VatS3ipyjF
+
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: bus-refresh
