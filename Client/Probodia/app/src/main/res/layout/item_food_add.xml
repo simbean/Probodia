@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/food_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="food name"
+            android:textSize="15dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/food_glucose_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/food_name_text"
+            android:layout_marginTop="8dp"
+            android:text="100"
+            android:textSize="13dp"
+            android:textColor="@color/primary_100"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/food_glucose_text"
+            android:layout_toRightOf="@id/food_glucose_text"
+            android:layout_marginLeft="4dp"
+            android:text="mmHg"
+            android:textSize="10dp"
+            android:textColor="@color/gray_500"
+            android:visibility="invisible"/>
+
+        <ImageButton
+            android:id="@+id/delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_delete"
+            android:padding="5dp"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/delete_btn"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/ic_edit"
+            android:padding="5dp"
+            android:background="@android:color/transparent"/>
+
+    </RelativeLayout>
+</layout>

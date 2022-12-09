@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vm"
+            type="com.piri.probodia.viewmodel.SearchFoodDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".view.activity.SearchFoodDetailActivity"
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/white_top_3_background">
+
+        <LinearLayout
+            android:id="@+id/food_info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/food_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="34dp"
+                    android:text="음식 이름"
+                    android:textColor="@color/gray_900"
+                    android:textSize="20dp" />
+
+                <ImageButton
+                    android:id="@+id/cancel_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@android:color/transparent"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_cancel" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/quantity_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="용량" />
+
+            <LinearLayout
+                android:id="@+id/quantity_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="8dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/quantity_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="10"
+                    android:background="@drawable/gray_100_2_background"
+                    android:digits="0987654321."
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:maxLength="4"
+                    android:singleLine="true"
+                    android:text="1"
+                    android:textColor="@color/primary_100"
+                    android:textSize="24dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/quantity_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_1_background"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="인분"
+                    android:drawableRight="@drawable/ic_refresh"
+                    style="?attr/borderlessButtonStyle"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/quantity_bottom_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp"
+                android:background="@color/gray_200" />
+
+            <LinearLayout
+                android:id="@+id/glucose_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/glucose_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp" />
+
+                <TextView
+                    android:id="@+id/glucose_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_200" />
+
+            <TextView
+                android:id="@+id/quantity_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="24dp"
+                android:text="@{vm.foodQuantityText}"
+                android:drawableRight="@drawable/ic_downarrow"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/food_info_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp"
+            android:background="@color/gray_200"
+            android:layout_below="@id/food_info_layout"/>
+
+        <LinearLayout
+            android:id="@+id/food_gl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/line">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이런 음식은 어때요?"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="프로바디아가 더 건강한 음식을 추천해드립니다."/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp">
+
+                <Button
+                    android:id="@+id/food_big"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="@{vm.foodBigInfo.name}"
+                    android:textSize="16dp"
+                    android:background="@drawable/white_2_background"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    style="?attr/borderlessButtonStyle"/>
+
+                <Button
+                    android:id="@+id/food_small"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="12dp"
+                    android:text="@{vm.foodSmallInfo.name}"
+                    android:textSize="16dp"
+                    android:background="@drawable/white_2_background"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    style="?attr/borderlessButtonStyle"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/enter_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/primary_100_2_background"
+            android:text="추가"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginVertical="12dp"/>
+    </RelativeLayout>
+</layout>
