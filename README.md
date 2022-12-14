@@ -1,3 +1,6 @@
+![soma](https://user-images.githubusercontent.com/67853497/207560840-4e40b0cb-4312-4804-97b6-36812ff45163.png)
+
+
 # Probodia
 ## SWM13 project - protect your body from diabetes
 
