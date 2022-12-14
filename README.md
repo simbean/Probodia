@@ -1,4 +1,6 @@
 # Probodia
+![KakaoTalk_Photo_2022-12-14-18-23-44](https://user-images.githubusercontent.com/67853497/207556987-91c81911-fc6c-4c68-89c5-a20432b3fbc7.jpeg)
+
 SWM13 project - protect your body from diabetes
 
 # Tech Stack
