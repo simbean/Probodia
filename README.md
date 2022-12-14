@@ -1,6 +1,12 @@
 # Probodia
 ## SWM13 project - protect your body from diabetes
 
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 고범석 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 최준성 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 김기완 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|:---:|:---:|:---:|  
+| - 팀장 <br> - AI  <br> - [GitHub](https://github.com/kobeomseok95) | - 기획자 <br> - Back-end<br>- DevOps <Br> - [GitHub](https://github.com/backtony) | - PM <br>- Front-end <br> - [GitHub](https://github.com/kiwan97)
+
+
+
 ![KakaoTalk_Photo_2022-12-14-18-23-44](https://user-images.githubusercontent.com/67853497/207557449-15c05daf-d888-4710-a63f-421bb96df054.jpeg)
 
 기존 앱은 당뇨 일지 기록을 꾸준히 하기 어려웠고 환자가 자신의 생활습관을 능동적으로 조절하기 어려웠습니다. 프로바디아는 챌린지 기능을 통해 꾸준한 당뇨 일지 기록의 어려움을 해결하고자 하며, 음식에 따른 당뇨 지수를 산출하여 사용자들의 식단 관리를 돕고자 합니다.
