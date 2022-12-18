@@ -48,10 +48,4 @@ public class RabbitProducerConfig {
         return rabbitTemplate;
     }
 
-
-    @Bean
-    MessageConverter messageConverter() {
-        return new Jackson2JsonMessageConverter();
-    }
-
 }
